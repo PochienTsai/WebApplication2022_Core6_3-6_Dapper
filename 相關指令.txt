@@ -1,0 +1,22 @@
+(1) 務必先透過NuGet安裝兩個套件
+-- 「Microsoft.EntityFrameworkCore.Tools」套件
+-- 「Microsoft.EntityFrameworkCore.SqlServer」套件
+
+不然會出現下列錯誤 --
+
+Scaffold-DbContext : 無法辨識 'Scaffold-DbContext' 詞彙是否為 Cmdlet、函數、指令檔或可執行程式的名稱。請檢查名稱拼字是否正確，如果包含路徑的話，請確認路徑是否正確，然後再試一次。
+位於 線路:1 字元:1
++ Scaffold-DbContext 'Data Source=.\SqlExpress;Initial Catalog=MVC_User ...
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Scaffold-DbContext:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+(2)   上方的功能列「工具」 =>「Nuget套件管理器」=>「套件管理器主控台」
+請輸入這段指令
+Scaffold-DbContext 'Server=.\sqlexpress;Database=MVC_UserDB;Trusted_Connection=True;MultipleActiveResultSets=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+Scaffold-DbContext 'Server=.\sqlexpress;Database=MVC_UserDB2;Trusted_Connection=True;MultipleActiveResultSets=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models2
+
+Scaffold-DbContext 'Server=.\sqlexpress;Database=Northwind;Trusted_Connection=True;MultipleActiveResultSets=true' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models2Northwind
+
