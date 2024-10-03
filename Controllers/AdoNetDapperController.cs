@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;   // Async「非同步」會用到的命名
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;  // 讀取appsettings.json設定檔
 
-using Dapper;  // *******************************************
+using Dapper;  // 請透過Nuget安裝[Dapper]*******************************************
 //************************************************************
 //ADO.net Dapper建議使用DataReader(效能快,省資源）
 //1. 查詢．撈取紀錄 ：配合Select 的SQL指令(Dapper--.Query())
@@ -468,7 +468,7 @@ namespace WebApplication2022_Core6_3_6_Dapper.Controllers
 
                 //下面這段指令的結果，資料型態是 List<Models2.DepartmentTable2>
                 var endData = Conn.Query<Models2.DepartmentTable2, Models2.UserTable2, Models2.DepartmentTable2>(
-                        //                                //*** 「一對多」的 兩個關連式資料表                    *** 第三個小心！！仍用第一個資料表*******  
+                        //                                //*** 「一對多」的 兩個關連式資料表                    *** 第三個小心！！仍用第一個資料表(放輸出結果)*******
                         sqlstr,
                         (dt, ut) =>
                         {

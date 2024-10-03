@@ -12,6 +12,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;  // 讀取appsettings.json設定檔
 
 using Dapper;  // *******************************************
+// *******************************************
 //************************************************************
 //ADO.net建議使用DataReader(效能快,省資源）
 //1. 查詢．撈取紀錄 ：配合Select 的SQL指令(.ExecuteReader())
